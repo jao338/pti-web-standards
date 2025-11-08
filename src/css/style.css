@@ -1,3 +1,74 @@
+/* Define a fonte padrão para todo o site */
 *{
     font-family: Poppins, sans-serif;
+}
+
+/* Remover sublinhado dos links */
+
+a{
+    text-decoration: none;
+}
+
+/* Classe usada para imagem de fundo do header */
+.img-background{
+    max-height: 400px; 
+    object-fit: cover; 
+    opacity: 0.3; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 0;
+}
+
+.img-background{
+    max-height: 400px; 
+    object-fit: cover; 
+}
+
+.bg-servicos {
+  position: relative;
+  background-image: url('../assets/imgs/background-servicos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+.bg-servicos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 0;
+}
+
+.bg-servicos > * {
+  position: relative;
+  z-index: 1;
+}
+
+#btnTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  transform: translateY(10px);
+}
+
+#btnTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+button, .btn {
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
